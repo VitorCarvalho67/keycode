@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get KeyCode</title>
+</head>
+<body>
+    <p id="a">Pressione uma tecla para ter seu KeyCode</p>
+    <div id="o">
+        <p>Tecla</p>
+        <p id="e"></p>
+        <p>KeyCode: </p>
+        <p id="i"></p>
+    </div>
+    <div id="d">
+        <button id="b">Get KeyCode</button>
+        <input type="text" id="u">
+    </div>
+    <script>
+        var v = 0;
+        var j = 1;
+        document.addEventListener("keydown", keyPush);
+        o.style.display = "none";
+        a.style.display = "none";
+        var l = 0;
+        function keyPush(event){
+            if(v == 1){
+                j = 0;
+                a.style.display = "none";
+                o.style.display = "flex";
+                document.getElementById('u').value = "";
+                i.innerText = event.keyCode;
+
+                if(event.keyCode == 13){
+                    document.getElementById('u').value = "\"Enter\"";
+                }
+                else if(event.keyCode == 32){
+                    document.getElementById('u').value = "\"Espaço\"";
+                }
+                else if(event.keyCode == 91){
+                    document.getElementById('u').value = "\"Windows\"";
+                }
+                else if(event.keyCode == 17){
+                    document.getElementById('u').value = "\"Control\"";
+                }
+                else if(event.keyCode == 18){
+                    document.getElementById('u').value = "\"Alt\"";
+                }
+                else if(event.keyCode == 37){
+                    document.getElementById('u').value = "\"Esquerda\"";
+                }
+                else if(event.keyCode == 38){
+                    document.getElementById('u').value = "\"Cima\"";
+                }
+                else if(event.keyCode == 39){
+                    document.getElementById('u').value = "\"Direita\"";
+                }
+                else if(event.keyCode == 40){
+                    document.getElementById('u').value = "\"Baixo\"";
+                }
+                else if(event.keyCode == 16){
+                    document.getElementById('u').value = "\"Shift\"";
+                }
+                else if(event.keyCode == 20){
+                    document.getElementById('u').value = "\"CapsLk\"";
+                }
+                else if(event.keyCode == 176){
+                    document.getElementById('u').value = "\"~\"";
+                }
+                else if(event.keyCode == 9){
+                    document.getElementById('u').value = "\"Tab\"";
+                }
+                else if(event.keyCode == 27){
+                    document.getElementById('u').value = "\"Esc\"";
+                }
+                j = 1;
+            }
+        }
+
+        var t = "\"~\"~~"
+
+        setInterval(() => {
+            if(document.getElementById('u').value != t){
+                e.innerText =  (document.getElementById('u').value);
+                if(j==1 && (document.getElementById('u').value) == ""){
+                    (document.getElementById('u').value) = "especial"
+                }
+            }
+            
+        })
+
+        document.getElementById('u').onclick = () =>{
+            if(l == 0){
+                b.style.display = "none";
+                a.style.display = "flex";
+                d.style.width= "100vh"
+                d.style.height = "100vh"
+                u.style.width= "100vh"
+                u.style.height = "100vh"
+                u.style.position = "relative";
+                u.style.left = "0px";
+                u.style.top = "0px";
+
+                l = 1;
+                v = 1;
+            }
+        }
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            font-size: 22px;
+            color: rgb(187, 187, 187);
+            font-family: sans-serif;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            background-color: rgb(70, 70, 70);
+        }
+
+        input:hover{
+            cursor: default;
+        }
+
+        #u{
+            outline: none;
+            color: transparent;
+            background-color: transparent;
+            border: none;
+            border: solid 1px rgba(0, 0, 0, 0);
+            color: rgba(0, 0, 0, 0);
+            position: relative;
+            top: -70px;
+            width: 170px;
+            height: 70px;
+            z-index: 1000;
+        }
+
+        #d:hover{
+            transform: scale(1.2);
+            transition: all 0.2s ease-in-out;
+        } 
+
+        #b{
+            height: 70px;
+            width: 170px;
+            border-radius: 0px;
+            border: none;
+            background-color: rgb(51, 51, 51);
+            padding: 10px;
+            border-radius: 10px;
+            border: solid 1px black;
+        }
+
+        #u::selection{
+            user-select: none;
+        }
+
+        p{
+            padding: 5px;
+        }
+
+        #o, #a{
+            position: fixed;
+            background-color: rgb(51, 51, 51);
+            padding: 10px;
+            border-radius: 10px;
+            border: solid 1px black;
+        }
+
+        #d{
+            width: 170px;
+            height: 70px;
+        }
+
+        .c{
+            display: none;
+        }
+
+        @media screen and (max-width: 450px) {
+            #a, #o, #d{
+                display: none;
+            }
+            
+            body{
+                display: block;
+            }
+
+            .c{
+                display: flex;
+            }
+            
+        }
+
+    </style>
+    <div class="c">
+        <p>Ops... No momento o site não está disponível para celulares antigos chineses :(</p> 
+    </div>
+</body>
+</html>
